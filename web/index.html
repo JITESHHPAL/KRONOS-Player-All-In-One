@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>KRONOS</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="player.css"></head>
+<body>
+<div id="home" class="screen">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="glass card">
+    <div class="hero">
+      <div class="liquid"></div>
+      <img class="logo" src="icon-192.png" alt="">
+      <h1 class="kronos" aria-label="KRONOS"><span>K</span><span>R</span><span>O</span><span>N</span><span>O</span><span>S</span></h1>
+      <p class="tag">VIDEO · PHOTOS · MUSIC</p>
+    </div>
+    <button class="gb tile" id="tRecent"><span>🕘</span><div><b>Recent</b><small>Pick up where you left off</small></div></button>
+    <button class="gb tile" id="tVideo"><span>🎬</span><div><b>Videos</b><small>Player with audio, quality &amp; subtitles</small></div></button>
+    <button class="gb tile" id="tPhoto"><span>🖼</span><div><b>Photos</b><small>Image viewer with zoom &amp; slideshow</small></div></button>
+    <button class="gb tile" id="tMusic"><span>🎧</span><div><b>Music</b><small>Audio listener with queue &amp; timer</small></div></button>
+  </div>
+</div>
+
+<div id="lib" class="screen" hidden>
+  <div class="libTop glass"><button class="gb" id="libBack">←</button><b id="libTitle"></b><button class="gb" id="libPick">＋ Device</button></div>
+  <div id="libBody"></div>
+</div>
+
+<div id="viewer" class="screen" hidden>
+  <div id="vstage"><img id="vimg" alt="" draggable="false"></div>
+  <div id="vtop" class="vui glass"><button class="gb" id="vback">←</button><span id="vtitle"></span><span id="vcount"></span></div>
+  <div id="vbar" class="vui glass">
+    <button class="gb" id="vprev">‹</button><button class="gb" id="vslide">▶</button><button class="gb" id="vrot">⟳</button>
+    <button class="gb" id="vzout">−</button><button class="gb" id="vzin">＋</button><button class="gb" id="vfit">Fit</button>
+    <button class="gb" id="vfs">⛶</button><button class="gb" id="vnext">›</button>
+  </div>
+</div>
+
+<div id="np" class="screen" hidden>
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="glass npcard">
+    <div class="row"><button class="gb" id="npBack">←</button><b>Now Playing</b></div>
+    <img id="art" class="art" src="icon-512.png" alt="">
+    <div id="ntitle">—</div><div id="nsub">KRONOS</div>
+    <div class="row"><span id="ncur">0:00</span><input id="nseek" type="range" min="0" max="1000" value="0"><span id="ndur">0:00</span></div>
+    <div class="row ctl"><button class="gb" id="nshuf">🔀</button><button class="gb" id="nprev">⏮</button><button class="gb round main" id="nplay">▶</button><button class="gb" id="nnext">⏭</button><button class="gb" id="nrep">🔁</button></div>
+    <div class="row ctl"><button class="gb" id="nrate">1x</button><button class="gb" id="nsleep">😴 Off</button><button class="gb" id="nlist">☰ Library</button></div>
+  </div>
+</div>
+<div id="mini" class="glass"><img src="icon-192.png" alt=""><span id="mtitle">—</span><button class="gb" id="mplay">▶</button><button class="gb" id="mnext">⏭</button></div>
+<div id="note" class="glass"></div>
+
+<div id="wrap" class="screen" hidden>
+  <video id="v" playsinline preload="auto"></video>
+  <div id="spin" class="glass"><i></i></div>
+  <div class="rip glass" id="ripL">⟲ 10</div><div class="rip glass" id="ripR">10 ⟳</div>
+  <div id="top"><button class="gb" id="close">←</button><img class="logo sm" src="icon-192.png" alt=""><span id="title"></span><span class="brand sm glass">KRONOS</span></div>
+  <div id="center">
+    <button class="gb round" id="back">⟲<small>10</small></button>
+    <button class="gb round main" id="play">▶</button>
+    <button class="gb round" id="fwd">⟳<small>10</small></button>
+  </div>
+  <div id="bar">
+    <div class="row">
+      <span id="time">0:00 / 0:00</span>
+      <input id="seek" type="range" min="0" max="1000" value="0">
+      <button class="gb" id="gear">⚙</button>
+      <button class="gb" id="fs">⛶</button>
+    </div>
+  </div>
+  <div id="menu" class="glass"><div id="mhead"><button class="gb" id="mback">←</button><b>Settings</b></div><div id="mbody"></div></div>
+  <div id="toast" class="glass"></div>
+  <input id="file" type="file" accept=".vtt,.srt" hidden>
+</div>
+<input id="devfile" type="file" hidden>
+<script src="media.js"></script>
+<script src="player.js"></script>
+</body></html>

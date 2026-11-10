@@ -1,0 +1,35 @@
+name: Bug report
+description: Something is not working as expected
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what did you see instead?
+    validations: {required: true}
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Open ...\n2. Tap ...\n3. ..."
+  - type: input
+    id: version
+    attributes:
+      label: KRONOS version
+      description: Output of `python server.py --version`
+  - type: input
+    id: device
+    attributes:
+      label: Device and browser
+      placeholder: "Pixel 7, Chrome 130 / Windows 11 laptop"
+  - type: input
+    id: media
+    attributes:
+      label: File format (for playback problems)
+      placeholder: "MKV, H.265, 2 audio tracks"
+  - type: dropdown
+    id: ffmpeg
+    attributes:
+      label: Is ffmpeg installed?
+      options: ["Yes", "No", "Not sure"]
